@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LearnSpark</title>
-    <!-- Link to YOUR VANILLA CSS file -->
-    <link rel="stylesheet" href="/style.css">
+    <!-- UPDATED: The path is now relative, which works everywhere. -->
+    <link rel="stylesheet" href="./style.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,9 +68,8 @@
             <form id="start-journey-form" class="reveal"><input type="text" placeholder="Child's Name" required><input type="number" placeholder="Age (4-12)" required min="4" max="12"><button type="submit" class="btn">Begin Adventure</button></form>
         </section>
     </main>
-
-    <!-- UPDATED: Added type="module" -->
-    <script type="module" src="/script.js"></script>
+    
+    <!-- UPDATED: We only need this one entry point now. Vite will handle the rest. -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
