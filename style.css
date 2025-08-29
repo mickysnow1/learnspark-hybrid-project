@@ -1,0 +1,145 @@
+/* These 3 lines are essential. They tell Vite's tools to inject all the Tailwind styles here. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* The rest is your custom VANILLA CSS */
+:root {
+    --primary-color-rgb: 30, 58, 138;
+    --accent-color: #10B981;
+    --background-light: #F9FAFB;
+    --text-dark: #1F2937;
+    --text-secondary-light: #6B7280;
+    --sidebar-width: 240px;
+    --border-radius: 1rem;
+    --soft-glow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+html.dark {
+    --primary-color-rgb: 17, 24, 39;
+    --accent-color: #34D399;
+    --background-light: #030712; 
+    --text-dark: #F9FAFB;
+    --text-secondary-light: #9CA3AF;
+    --soft-glow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+}
+
+body {
+    font-family: 'Inter', sans-serif, system-ui;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    display: flex;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.glass-effect {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+html.dark .glass-card {
+    background: rgba(31, 41, 55, 0.6);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.interactive-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--soft-glow);
+}
+
+.text-accent { color: var(--accent-color); }
+
+.main-content {
+    margin-left: var(--sidebar-width); padding: 40px;
+    flex-grow: 1; width: calc(100% - var(--sidebar-width));
+}
+
+.section {
+    padding: 80px 20px; text-align: center; min-height: 90vh;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+
+.section h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin-bottom: 1.5rem; }
+.section h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 2rem; }
+.section > p { max-width: 650px; font-size: 1.125rem; line-height: 1.75; color: var(--text-secondary-light); }
+
+.grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem; width: 100%; max-width: 1200px; margin-top: 2rem;
+}
+
+.sidebar {
+    width: var(--sidebar-width); background: rgba(var(--primary-color-rgb), 0.7);
+    color: #F9FAFB; padding: 20px; position: fixed; z-index: 10;
+    height: 100vh; display: flex; flex-direction: column;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s;
+}
+
+.logo { font-size: 1.8rem; font-weight: 700; margin-bottom: 2.5rem; text-align: center; }
+.nav-list { list-style: none; }
+.nav-link {
+    display: block; color: #E5E7EB; text-decoration: none; padding: 14px;
+    border-radius: 8px; margin-bottom: 8px; font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+.nav-link:hover { background-color: rgba(255,255,255,0.1); color: #FFF; }
+.nav-link.active { background-color: var(--accent-color); color: #FFF; }
+
+/* --- UPDATED: Theme Toggle Position --- */
+.theme-toggle {
+    background: none; border: none; color: #F9FAFB; font-size: 1.25rem; /* Slightly smaller */
+    cursor: pointer; 
+    margin-top: auto; /* Pushes to the bottom */
+    margin-right: auto; /* Pushes to the left */
+    padding: 10px;
+    transition: transform 0.2s ease;
+}
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.modern-card-content { padding: 2rem; text-align: left; display: flex; flex-direction: column; gap: 1.5rem; }
+.modern-card-content .card-title { font-size: 1.5rem; font-weight: 600; }
+.modern-card-content .card-description { color: var(--text-secondary-light); line-height: 1.6; }
+.modern-card-content .card-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+.modern-card-content .card-list-item { display: flex; align-items: flex-start; gap: 0.75rem; }
+.modern-card-content .card-list-item svg { flex-shrink: 0; width: 24px; height: 24px; color: var(--accent-color); margin-top: 2px; }
+.learning-process-card { padding: 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+.learning-process-card h3 { font-size: 1.25rem; font-weight: 600; }
+.learning-process-card p { color: var(--text-secondary-light); }
+
+.faq-item { width: 100%; max-width: 750px; margin: 16px auto; text-align: left; border-radius: 12px; overflow: hidden; }
+.faq-question-wrapper { border-bottom: 1px solid rgba(255,255,255,0.1); }
+.faq-question { background: none; border: none; width: 100%; text-align: left; font-size: 1.1rem; padding: 1rem 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: var(--text-dark); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, padding 0.4s ease-out; padding: 0 1.5rem; }
+.faq-answer p { font-size: 1rem; }
+.faq-item.active .faq-answer { max-height: 150px; padding: 0 1.5rem 1.5rem; }
+.toggle-icon { font-size: 1.5rem; transition: transform 0.3s ease; }
+.faq-item.active .toggle-icon { transform: rotate(45deg); }
+
+#start-journey-form { width: 100%; max-width: 450px; margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+#start-journey-form input { padding: 14px; border: 1px solid #D1D5DB; border-radius: 8px; font-size: 1rem; background-color: var(--background-light); color: var(--text-dark); }
+.btn { background: var(--accent-color); color: #fff; padding: 14px 28px; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 1rem; transition: background-color 0.2s; }
+.btn:hover { background-color: #059669; }
+
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+@keyframes floatAnimation { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.floating-card { animation: floatAnimation 4s ease-in-out infinite; }
+
+@media (max-width: 768px) {
+    body { flex-direction: column; }
+    .sidebar { width: 100%; height: auto; position: static; }
+    .main-content { margin-left: 0; width: 100%; padding: 20px; }
+    .section { padding: 60px 10px; }
+}
