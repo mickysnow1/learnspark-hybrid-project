@@ -1,9 +1,7 @@
-/* These 3 lines are essential. They tell Vite's tools to inject all the Tailwind styles here. */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* The rest is your custom VANILLA CSS */
 :root {
     --primary-color-rgb: 30, 58, 138;
     --accent-color: #10B981;
@@ -95,12 +93,11 @@ html.dark .glass-card {
 .nav-link:hover { background-color: rgba(255,255,255,0.1); color: #FFF; }
 .nav-link.active { background-color: var(--accent-color); color: #FFF; }
 
-/* --- UPDATED: Theme Toggle Position --- */
 .theme-toggle {
-    background: none; border: none; color: #F9FAFB; font-size: 1.25rem; /* Slightly smaller */
+    background: none; border: none; color: #F9FAFB; font-size: 1.25rem;
     cursor: pointer; 
-    margin-top: auto; /* Pushes to the bottom */
-    margin-right: auto; /* Pushes to the left */
+    margin-top: auto;
+    margin-right: auto;
     padding: 10px;
     transition: transform 0.2s ease;
 }
