@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LearnSpark</title>
-    <!-- UPDATED: The path is now relative, which works everywhere. -->
+    <!-- We DO NOT link to style.css here. Vite will inject it automatically. -->
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,7 @@
     <link rel="stylesheet" crossorigin href="/learnspark-hybrid-project/assets/index-B2SpuqXf.css">
   </head>
   <body>
+    <!-- Your entire vanilla HTML structure is here -->
     <nav class="sidebar glass-effect">
         <h2 class="logo">LearnSpark</h2>
         <ul class="nav-list">
@@ -25,13 +26,11 @@
         </ul>
         <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
     </nav>
-
     <main class="main-content">
         <section id="hero" class="section">
             <h1 class="reveal">Where <span class="text-accent">Curiosity</span> Meets Learning <span class="text-accent">Adventures</span></h1>
             <p class="reveal" style="transition-delay: 0.2s;">Spark your child's love for learning through interactive challenges, gamified lessons, and exciting rewards.</p>
         </section>
-
         <section id="challenges" class="section">
             <h2 class="reveal">Turning Challenges into <span class="text-accent">Triumphs</span></h2>
             <div class="grid">
@@ -39,7 +38,6 @@
                 <div class="glass-card glass-effect interactive-card reveal" style="transition-delay: 0.2s;"><div class="modern-card-content"><h3 class="card-title">The LearnSpark Solution</h3><p class="card-description">We transform learning into an exciting adventure that kids and parents love.</p><ul class="card-list"><li class="card-list-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span>Gamified challenges and rewards that boost motivation.</span></li><li class="card-list-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span>Intuitive dashboards with clear, actionable insights.</span></li></ul></div></div>
             </div>
         </section>
-
         <section id="how-learning" class="section">
             <h2 class="reveal">Your Child's Learning <span class="text-accent">Journey</span></h2>
             <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
@@ -49,13 +47,11 @@
                 <div class="glass-card glass-effect floating-card reveal" style="animation-delay: 0.2s;"><div class="learning-process-card"><h3>🔄 Grow</h3><p>Our adaptive system tailors the next challenge.</p></div></div>
             </div>
         </section>
-        
         <section id="plans" class="section">
             <h2 class="reveal">Choose Your Learning <span class="text-accent">Plan</span></h2>
             <p class="reveal" style="margin-bottom: 2.5rem;">Simple, transparent pricing for families and schools.</p>
             <div id="plans-root" class="w-full reveal" style="transition-delay: 0.2s;"></div>
         </section>
-        
         <section id="faq" class="section">
             <h2 class="reveal">Frequently Asked <span class="text-accent">Questions</span></h2>
             <div class="w-full max-w-3xl reveal">
@@ -63,13 +59,12 @@
                 <div class="faq-item glass-card glass-effect interactive-card"><div class="faq-question-wrapper"><button class="faq-question" aria-expanded="false">Can I track my child's progress?<span class="toggle-icon">+</span></button></div><div class="faq-answer"><p>Absolutely! The parent dashboard provides detailed insights into your child's progress, subjects mastered, and time spent learning.</p></div></div>
             </div>
         </section>
-        
         <section id="start-journey" class="section">
             <h2 class="reveal">Start Your Learning <span class="text-accent">Journey Today</span></h2>
             <form id="start-journey-form" class="reveal"><input type="text" placeholder="Child's Name" required><input type="number" placeholder="Age (4-12)" required min="4" max="12"><button type="submit" class="btn">Begin Adventure</button></form>
         </section>
     </main>
     
-    <!-- UPDATED: We only need this one entry point now. Vite will handle the rest. -->
+    <!-- This is now the ONLY script tag. Vite will handle everything from here. -->
   </body>
 </html>
